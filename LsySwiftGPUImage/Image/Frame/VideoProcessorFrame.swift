@@ -13,10 +13,25 @@ import AVFoundation
 class VideoProcessorFrame : NSObject {
     open var context : VideoProccessorMetalContext! = nil
     open var texture : MTLTexture! = nil
+    open weak var delegate : VideoProccessorFramePoolRecycleDelegate?
+    open var framePoolKey : String! = nil
     
     var textureCache : CVMetalTextureCache! = nil
     var cvMetalTexture : CVMetalTexture! = nil
     var hasConvertToMTL = false
+    var usingCount = 0
+    
+    //MARK: - Public
+    public func use() {
+        usingCount += 1
+    }
+    
+    public func unuse() {
+        usingCount -= 1
+        if usingCount == 0 {
+            self.delegate?.frameDidRecycle(frame: self)
+        }
+    }
     
     //MARK: - Setter & Getter
     open var buffer : CMSampleBuffer! = nil {
