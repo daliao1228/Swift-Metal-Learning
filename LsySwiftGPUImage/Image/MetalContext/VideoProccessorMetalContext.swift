@@ -12,9 +12,21 @@ import MetalKit
 class VideoProccessorMetalContext : NSObject {
     open var device : MTLDevice! = nil
     
+    var commandQueue : MTLCommandQueue! = nil
+    
     override init() {
         super.init()
         
         device = MTLCreateSystemDefaultDevice()
+        commandQueue = device.makeCommandQueue()
+    }
+    
+    //MARK: - Public
+    public func commandBuffer() -> MTLCommandBuffer {
+        return commandQueue.makeCommandBuffer()!
+    }
+    
+    public func library() -> MTLLibrary {
+        return device.makeDefaultLibrary()!
     }
 }

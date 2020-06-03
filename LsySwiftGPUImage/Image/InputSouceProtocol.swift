@@ -6,6 +6,8 @@
 //  Copyright © 2020 liushuoyang. All rights reserved.
 //
 
+import MetalKit
+
 protocol InputSouceProtocol {
-    
+    func input(texture : MTLTexture, souce : AnyObject)
 }

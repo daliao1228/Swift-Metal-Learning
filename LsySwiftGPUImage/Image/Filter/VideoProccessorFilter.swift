@@ -1,5 +1,5 @@
 //
-//  VideoProccessorPipeline.swift
+//  VideoProccessorFilter.swift
 //  LsySwiftGPUImage
 //
 //  Created by liushuoyang on 2020/6/1.
@@ -8,3 +8,6 @@
 
 import Foundation
 
+class VideoProccessorFilter : NSObject {
+    
+}

@@ -16,7 +16,13 @@ class VideoProccessorFramePool : NSObject {
     
     var poolsContainer : Dictionary<String, Array<VideoProcessorFrame>> = Dictionary<String, Array<VideoProcessorFrame>>()
     var lock = NSLock()
-    var context : VideoProccessorMetalContext = VideoProccessorMetalContext()
+    var context : VideoProccessorMetalContext! = nil
+    
+    public init(withContext : VideoProccessorMetalContext) {
+        super.init()
+        
+        context = withContext
+    }
     
     //MARK: - Public
     public func frame(withKey : String) -> VideoProcessorFrame {
@@ -40,6 +46,7 @@ class VideoProccessorFramePool : NSObject {
     }
     
     //MARK: - Private
+    
 }
 
 extension VideoProccessorFramePool : VideoProccessorFramePoolRecycleDelegate {

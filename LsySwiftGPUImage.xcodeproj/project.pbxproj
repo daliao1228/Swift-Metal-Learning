@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		015D5D3C2484D6C8005C697C /* VideoProccessorPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015D5D3B2484D6C8005C697C /* VideoProccessorPipeline.swift */; };
+		015D5D3C2484D6C8005C697C /* VideoProccessorPipelineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015D5D3B2484D6C8005C697C /* VideoProccessorPipelineProtocol.swift */; };
 		015D5D3F2484D755005C697C /* VideoProcessorFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015D5D3E2484D755005C697C /* VideoProcessorFrame.swift */; };
 		015D5D422484DC83005C697C /* VideoProccessorMetalContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015D5D412484DC83005C697C /* VideoProccessorMetalContext.swift */; };
 		015D5D442484EBDD005C697C /* VideoProccessorFramePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015D5D432484EBDD005C697C /* VideoProccessorFramePool.swift */; };
+		015D5D4724853DB2005C697C /* VideoProccessSerialPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015D5D4624853DB2005C697C /* VideoProccessSerialPipeline.swift */; };
+		015D5D4A24853F6F005C697C /* VideoProccessorFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015D5D4924853F6F005C697C /* VideoProccessorFilter.swift */; };
 		0163E9272480B32C0009D9A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0163E9262480B32C0009D9A1 /* AppDelegate.swift */; };
 		0163E9292480B32C0009D9A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0163E9282480B32C0009D9A1 /* SceneDelegate.swift */; };
 		0163E92B2480B32C0009D9A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0163E92A2480B32C0009D9A1 /* ViewController.swift */; };
@@ -23,10 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		015D5D3B2484D6C8005C697C /* VideoProccessorPipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoProccessorPipeline.swift; sourceTree = "<group>"; };
+		015D5D3B2484D6C8005C697C /* VideoProccessorPipelineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoProccessorPipelineProtocol.swift; sourceTree = "<group>"; };
 		015D5D3E2484D755005C697C /* VideoProcessorFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoProcessorFrame.swift; sourceTree = "<group>"; };
 		015D5D412484DC83005C697C /* VideoProccessorMetalContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoProccessorMetalContext.swift; sourceTree = "<group>"; };
 		015D5D432484EBDD005C697C /* VideoProccessorFramePool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoProccessorFramePool.swift; sourceTree = "<group>"; };
+		015D5D4624853DB2005C697C /* VideoProccessSerialPipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoProccessSerialPipeline.swift; sourceTree = "<group>"; };
+		015D5D4924853F6F005C697C /* VideoProccessorFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoProccessorFilter.swift; sourceTree = "<group>"; };
 		0163E9232480B32C0009D9A1 /* LsySwiftGPUImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LsySwiftGPUImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0163E9262480B32C0009D9A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0163E9282480B32C0009D9A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +58,8 @@
 		015D5D3A2484D645005C697C /* Pipeline */ = {
 			isa = PBXGroup;
 			children = (
-				015D5D3B2484D6C8005C697C /* VideoProccessorPipeline.swift */,
+				015D5D3B2484D6C8005C697C /* VideoProccessorPipelineProtocol.swift */,
+				015D5D4624853DB2005C697C /* VideoProccessSerialPipeline.swift */,
 			);
 			path = Pipeline;
 			sourceTree = "<group>";
@@ -74,6 +79,14 @@
 				015D5D412484DC83005C697C /* VideoProccessorMetalContext.swift */,
 			);
 			path = MetalContext;
+			sourceTree = "<group>";
+		};
+		015D5D4824853F54005C697C /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				015D5D4924853F6F005C697C /* VideoProccessorFilter.swift */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 		0163E91A2480B32C0009D9A1 = {
@@ -108,12 +121,12 @@
 			path = LsySwiftGPUImage;
 			sourceTree = "<group>";
 		};
-		0163E93A2480B3920009D9A1 /* Input */ = {
+		0163E93A2480B3920009D9A1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				0163E93E2480B7D70009D9A1 /* InputCameraSession.swift */,
 			);
-			path = Input;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		0163E93B2480B3A20009D9A1 /* Image */ = {
@@ -123,7 +136,8 @@
 				015D5D402484DC57005C697C /* MetalContext */,
 				015D5D3D2484D738005C697C /* Frame */,
 				015D5D3A2484D645005C697C /* Pipeline */,
-				0163E93A2480B3920009D9A1 /* Input */,
+				0163E93A2480B3920009D9A1 /* Source */,
+				015D5D4824853F54005C697C /* Filter */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -213,10 +227,12 @@
 				0163E9292480B32C0009D9A1 /* SceneDelegate.swift in Sources */,
 				015D5D442484EBDD005C697C /* VideoProccessorFramePool.swift in Sources */,
 				0163E93F2480B7D70009D9A1 /* InputCameraSession.swift in Sources */,
+				015D5D4A24853F6F005C697C /* VideoProccessorFilter.swift in Sources */,
 				0163E943248102410009D9A1 /* AVAuthorizationStatusChecker.swift in Sources */,
-				015D5D3C2484D6C8005C697C /* VideoProccessorPipeline.swift in Sources */,
+				015D5D3C2484D6C8005C697C /* VideoProccessorPipelineProtocol.swift in Sources */,
 				015D5D3F2484D755005C697C /* VideoProcessorFrame.swift in Sources */,
 				0163E93D2480B70E0009D9A1 /* InputSouceProtocol.swift in Sources */,
+				015D5D4724853DB2005C697C /* VideoProccessSerialPipeline.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -193,10 +193,6 @@ class InputCameraSession : NSObject {
     }
 }
 
-extension InputCameraSession : InputSouceProtocol {
-    
-}
-
 extension InputCameraSession : AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAudioDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         
